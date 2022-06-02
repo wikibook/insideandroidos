@@ -1,0 +1,17 @@
+android_app {
+    name: "AproximityClient",
+    vendor: true,
+    privileged: true,
+    certificate: "platform",
+    srcs: [
+        "app/src/**/*.java",
+        "app/src/**/*.kt",
+    ],
+    resource_dirs: [
+        "app/src/main/res",
+    ],
+    static_libs: [
+        "vendor.acme.one.aproximity-V1.0-java",
+    ],
+    manifest: "app/src/main/AndroidManifest.xml"
+}

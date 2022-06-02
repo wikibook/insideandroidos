@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Permission Sample Client</string>
+    <string name="min_tgt_act_name">Min Target SDK Activity</string>
+    <string name="btn_get">GET</string>
+    <string name="btn_notify">NOTIFY</string>
+    <string name="startup_text">Touch a button to get the min target SDK</string>
+    <string name="using_get">Using GET method</string>
+    <string name="using_notify">Using NOTIFY method</string>
+    <string name="min_tgt_sdk_fmt">Platform Min Target SDK: %d</string>
+    <string name="start_service_fail">Failed to start the service!</string>
+</resources>

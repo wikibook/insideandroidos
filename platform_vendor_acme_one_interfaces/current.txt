@@ -1,0 +1,2 @@
+3b78d426c0466fbe4c67c0bd33cb0fcae8f55c35539ba5fbdae698b4b19ef250 vendor.acme.one.aproximity@1.0::types
+c270b98c7a304a5026ffd1c6e6cfb03bf01756efdcd45950758a87e604b108d7 vendor.acme.one.aproximity@1.0::IAproximity

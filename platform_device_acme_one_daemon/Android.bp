@@ -1,0 +1,16 @@
+cc_binary {
+    name: "proximityd",
+    relative_install_path: "hw",
+    init_rc: ["vendor.proximityd.acme.one.rc"],
+    srcs: [
+        "proximityd.c",
+    ],
+    shared_libs: [
+        "libbase",
+        "libcutils",
+        "liblog",
+        "libutils",
+    ],
+    vendor: true,
+    proprietary: true
+}

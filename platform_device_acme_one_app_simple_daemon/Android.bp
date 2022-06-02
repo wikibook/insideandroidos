@@ -1,0 +1,21 @@
+cc_binary {
+    name: "acmesimpledaemon",
+    relative_install_path: "hw",
+    init_rc: ["vendor.acmesimpledaemon.acme.one.rc"],
+    header_libs: [
+        "libacmeproximityshim_headers",
+        "liblog_headers",
+    ],
+    srcs: [
+        "acme-simple-daemon.cpp"
+    ],
+    shared_libs: [
+        "liblog",
+        "libcutils",
+    ],
+    static_libs: [
+        "libacmeproximityshim",
+    ],
+    vendor: true,
+    proprietary: true,
+}

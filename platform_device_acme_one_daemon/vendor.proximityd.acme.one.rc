@@ -1,0 +1,5 @@
+service proximityd /vendor/bin/hw/proximityd
+    class main
+    user system
+    group system
+    oneshot

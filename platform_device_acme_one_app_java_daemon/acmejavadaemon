@@ -1,0 +1,6 @@
+#!/system/bin/sh
+#
+# Helper script used to start the Acme One Proximity Java Daemon
+#
+export CLASSPATH=/vendor/framework/acmejavadaemon.jar
+exec dalvikvm -cp $CLASSPATH com.acme.device.proximity.AcmeJavaDaemon "$@"

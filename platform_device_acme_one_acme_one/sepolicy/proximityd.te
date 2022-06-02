@@ -1,0 +1,11 @@
+###
+# The Acme One proximity sensor daemon execution domain
+#
+init_daemon_domain(proximityd)
+
+type proximityd, domain;
+type proximityd_exec, vendor_file_type, exec_type, file_type;
+
+# Allow the daemons access to /dev/tty*, which would cover USB
+# serial devices at /dev/ttyUSB*
+allow proximityd serial_device:chr_file rw_file_perms;

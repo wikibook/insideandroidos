@@ -1,0 +1,13 @@
+android_app {
+    name: "PermsSampleHost",
+    product_specific: true,
+    certificate: "shared",
+    srcs: [
+        "app/src/**/*.java",
+        "app/src/**/*.kt",
+    ],
+    resource_dirs: [
+        "app/src/main/res",
+    ],
+    manifest: "app/src/main/AndroidManifest.xml"
+}

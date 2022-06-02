@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AproximityClient</string>
+    <string name="proximity_details_title">Proximity Sensor Details</string>
+    <string name="precision_title">Precision Value</string>
+    <string name="help_integer_value">Enter an integer value</string>
+    <string name="proximity_data_title">Latest Proximity Value</string>
+    <string name="proximity_summary_title">Proximity Poll Summary</string>
+    <string name="proximity_poll_btn">Poll Proximity</string>
+    <string name="bad_precision">Bad/Invalid Precision</string>
+</resources>

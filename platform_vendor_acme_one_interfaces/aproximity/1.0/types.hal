@@ -1,0 +1,16 @@
+package vendor.acme.one.aproximity@1.0;
+
+struct ValueRange {
+    int32_t  min;
+    int32_t  max;
+};
+
+struct ProximityDetails {
+    ValueRange  precision;
+    ValueRange  proximity;
+};
+
+struct ProximitySummary {
+    uint64_t  pollCallCount;
+    int64_t   lastPollCalledMs;
+};

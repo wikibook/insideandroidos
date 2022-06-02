@@ -1,0 +1,42 @@
+cc_defaults {
+    name: "vendor.acme.one.aproximity@1.0-defaults",
+    defaults: ["hidl_defaults"],
+    relative_install_path: "hw",
+    shared_libs: [
+        "libhidlbase",
+        "libhidltransport",
+        "libhwbinder",
+        "libutils",
+        "vendor.acme.one.aproximity@1.0",
+    ],
+    vendor: true,
+    proprietary: true,
+}
+
+cc_library {
+    name: "vendor.acme.one.aproximity@1.0-impl",
+    defaults: ["vendor.acme.one.aproximity@1.0-defaults"],
+    srcs: [
+        "Aproximity.cpp",
+    ],
+    header_libs: [
+        "libacmeproximityshim_headers",
+    ],
+    export_include_dirs: ["."],
+}
+
+cc_binary {
+    name: "vendor.acme.one.aproximity@1.0-service",
+    defaults: ["vendor.acme.one.aproximity@1.0-defaults"],
+    init_rc: ["vendor.acme.one.aproximity@1.0-service.rc"],
+    srcs: ["service.cpp"],
+    header_libs: [
+        "libacmeproximityshim_headers",
+    ],
+    static_libs: [
+        "libacmeproximityshim",
+        "vendor.acme.one.aproximity@1.0-impl",
+    ],
+    proprietary: true,
+    vendor: true,
+}

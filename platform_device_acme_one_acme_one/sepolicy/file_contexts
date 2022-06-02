@@ -1,0 +1,7 @@
+# Acme One Specific Changes
+/dev/ttyUSB[0-9]*                                               u:object_r:serial_device:s0
+/vendor/bin/hw/acmesimpledaemon                                 u:object_r:proximityd_exec:s0
+/vendor/bin/hw/acmenativedaemon                                 u:object_r:proximityd_exec:s0
+/vendor/bin/aproximitycl                                        u:object_r:aproximitycl_exec:s0
+/vendor/bin/hw/vendor\.acme\.one\.aproximity@1\.0-service       u:object_r:hal_aproximity_default_exec:s0
+/vendor/lib(64)/hw/proximityhal\.default\.so                    u:object_r:same_process_hal_file:s0

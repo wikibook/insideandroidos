@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    coreApp="true"
+    package="com.acme.one.permssamplehost" >
+
+    <permission-group android:name="com.acme.one.permission-group.TGT_INFO"
+                      android:description="@string/perm_group_tgt_info_descr"
+                      android:label="@string/perm_group_tgt_info_label" />
+
+    <permission android:name="com.acme.one.permission.GET_MIN_TGT_SDK"
+                android:description="@string/perm_get_min_tgt_sdk_descr"
+                android:label="@string/perm_get_min_tgt_sdk_label"
+                android:permissionGroup="com.acme.one.permission-group.TGT_INFO"
+                android:protectionLevel="signature" />
+
+    <permission android:name="com.acme.one.permission.NOTIFY_MIN_TGT_SDK"
+                android:description="@string/perm_notify_min_tgt_sdk_descr"
+                android:label="@string/perm_notify_min_tgt_sdk_label"
+                android:permissionGroup="com.acme.one.permission-group.TGT_INFO"
+                android:protectionLevel="signature" />
+
+    <application android:label="@string/app_name"
+                 android:icon="@drawable/app_launcher_icon"
+                 android:supportsRtl="true"
+                 android:allowBackup="false" >
+
+        <receiver android:name=".MinTargetReceiver"
+                 android:label="@string/min_tgt_receiver_name"
+                 android:permission="com.acme.one.permission.GET_MIN_TGT_SDK" >
+            <intent-filter>
+                <action android:name="com.acme.one.service.GET" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.acme.one.service.NOTIFY" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
+
+

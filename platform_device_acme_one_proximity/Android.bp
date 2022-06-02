@@ -1,0 +1,63 @@
+cc_defaults {
+    name: "vendor.acme.one.proximity.defaults",
+    relative_install_path: "hw",
+    cflags: [
+        "-g",
+        "-O0",
+        "-Wall",
+    ],
+    vendor: true,
+}
+
+cc_library_shared {
+    name: "proximityhal.default",
+    defaults: [
+        "vendor.acme.one.proximity.defaults",
+    ],
+    srcs: [
+        "hal/proximity_hal.cpp"
+    ],
+    header_libs: [
+        "liblog_headers",
+        "libhardware_headers",
+    ],
+    local_include_dirs: [
+        "include",
+    ],
+    shared_libs: [
+        "liblog",
+    ],
+    static_libs: [
+        "libacmeproximityshim",
+    ]
+}
+
+cc_library {
+    name: "libacmeproximityshim",
+    defaults: [
+        "vendor.acme.one.proximity.defaults",
+    ],
+    srcs: [
+        "dev/proximity_sensor.cpp",
+    ],
+    header_libs: [
+        "libhardware_headers",
+    ],
+    local_include_dirs: [
+        "include",
+    ],
+}
+
+cc_library_headers {
+    name: "libacmeproximityshim_headers",
+    defaults: [
+        "vendor.acme.one.proximity.defaults",
+    ],
+    header_libs: [
+        "libhardware_headers",
+    ],
+    export_header_lib_headers: [
+        "libhardware_headers",
+    ],
+    export_include_dirs: ["include"],
+}

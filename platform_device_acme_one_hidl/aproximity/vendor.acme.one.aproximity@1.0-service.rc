@@ -1,0 +1,4 @@
+service vendor.aproximity-1-0 /vendor/bin/hw/vendor.acme.one.aproximity@1.0-service
+    class hal
+    user system
+    group system

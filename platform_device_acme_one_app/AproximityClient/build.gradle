@@ -1,0 +1,45 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = "1.4.10"
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    ANDROID_BUILD_TOP = System.getenv('ANDROID_BUILD_TOP')
+    if (ANDROID_BUILD_TOP == null) {
+        println("No ANDROID_BUILD_TOP set, find it")
+        //  Assume the path beneath the Acme device tree
+        PROJECT_DIR = project.projectDir.toString()
+        ANDROID_BUILD_TOP = PROJECT_DIR.split('device/acme/one/app/AproximityClient')[0]
+    }
+
+    //  The Acme One JAR file for the aproximity Java lib is in an output
+    //  build path (assuming the full platform has been built.)
+    ACME_ONE_HIDL_INTERMEDIATE_TOP =
+        "$ANDROID_BUILD_TOP/out/soong/.intermediates/vendor/acme/one/interfaces"
+    APROXIMITY_JAVA_LIB_BASE_NAME = "vendor.acme.one.aproximity-V1.0-java"
+    APROXIMITY_INTERMEDIATE_TOP =
+        "$ACME_ONE_HIDL_INTERMEDIATE_TOP/aproximity/1.0/$APROXIMITY_JAVA_LIB_BASE_NAME"
+    APROXIMITY_LIB_PATH = "$APROXIMITY_INTERMEDIATE_TOP/android_common/combined"
+}

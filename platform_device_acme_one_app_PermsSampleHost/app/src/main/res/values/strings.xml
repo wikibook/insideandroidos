@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Permission Sample Host</string>
+    <string name="min_tgt_receiver_name">Min Target SDK Receiver</string>
+    <string name="perm_group_tgt_info_descr">Permissions used for retrieving minimum target SDK information.</string>
+    <string name="perm_group_tgt_info_label">Minimum Target SDK Permissions</string>
+    <string name="perm_get_min_tgt_sdk_descr">Permission needed to request the minimum target SDK version of the platform.</string>
+    <string name="perm_get_min_tgt_sdk_label">Get Min Target SDK Permission</string>
+    <string name="perm_notify_min_tgt_sdk_descr">Permissions needed to receive the minimum target SDK version via BroadcastReceiver</string>
+    <string name="perm_notify_min_tgt_sdk_label">Notify Min Target SDK Permission</string>
+</resources>
+
+

@@ -1,0 +1,39 @@
+cc_library_shared {
+    name: "libacmeproximityjni",
+    cflags: [
+        "-g",
+        "-O0",
+        "-Wall",
+    ],
+    srcs: [
+        "cpp/com_acme_device_proximity_AcmeProximitySensor.cpp",
+    ],
+    include_dirs: [
+        "device/acme/one/app/java_daemon/cpp",
+        "device/acme/one/proximity/include"
+    ],
+    header_libs: [
+        "libacmeproximityshim_headers",
+        "libhardware_headers",
+        "jni_headers",
+    ],
+    shared_libs: [
+        "libhardware",
+    ],
+    vendor: true,
+    proprietary: true,
+}
+
+java_binary {
+    name: "acmejavadaemon",
+    init_rc: ["vendor.acmejavadaemon.acme.one.rc"],
+    srcs: [
+        "java/**/*.java",
+    ],
+    static_libs: [
+        "jsr305",
+    ],
+    wrapper: "acmejavadaemon",
+    vendor: true,
+    proprietary: true,
+}

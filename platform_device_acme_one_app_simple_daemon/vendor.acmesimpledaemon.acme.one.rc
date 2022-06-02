@@ -1,0 +1,5 @@
+service acmesimpledaemon /vendor/bin/hw/acmesimpledaemon
+    class main
+    user system
+    group system
+    oneshot

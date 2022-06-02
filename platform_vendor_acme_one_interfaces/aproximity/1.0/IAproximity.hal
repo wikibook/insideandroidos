@@ -1,0 +1,38 @@
+package vendor.acme.one.aproximity@1.0;
+
+
+/**
+ * The Acme specialized proximity support, providing simple APIs to
+ * illustrate vendor custom HIDL.
+ */
+interface IAproximity {
+    /**
+     * Retrieve the latest proximity value for the specified precision
+     * value.
+     *
+     * @param precision contains the precision requested by the caller.
+     *    Valid values may be retrieved using the get_details method.
+     * @return the proximity value returned by the sensor
+     */
+    poll(int32_t precision) generates (int32_t proximity);
+
+    /**
+     * Get the details about the underlying sensor.
+     *
+     * @return the details for the underlying sensor, containing the
+     *    supported precision values and the range of proximity values.
+     */
+    get_details() generates (ProximityDetails details);
+
+    /**
+     * Retrieve usage summary information about the backing HIDL service.
+     *
+     * @return a summary of usage information for the HIDL service.
+     */
+    summarize() generates (ProximitySummary summary);
+
+    /**
+     * Reset the underlying hardware
+     */
+    reset();
+};

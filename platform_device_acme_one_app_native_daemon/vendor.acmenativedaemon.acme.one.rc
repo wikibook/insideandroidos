@@ -1,0 +1,5 @@
+service acmenativedaemon /vendor/bin/hw/acmenativedaemon
+    class main
+    user system
+    group system
+    oneshot

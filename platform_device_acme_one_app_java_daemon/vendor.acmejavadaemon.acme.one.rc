@@ -1,0 +1,5 @@
+service acmejavadaemon /vendor/bin/acmejavadaemon
+    class main
+    user system
+    group system
+    oneshot
